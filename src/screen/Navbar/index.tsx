@@ -1,9 +1,13 @@
-import React from "react";
 import Logo from "../../assets/logo.png";
+import Link from "./Link";
+import { SelectedPage } from "../../shared/types";
 
-type Props = {};
+type Props = {
+  selectedPage: SelectedPage;
+  setSelectedPage: (value: SelectedPage) => void;
+};
 
-const Navbar = (props: Props) => {
+const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
   const flexBetween = "flex items-center justify-between";
   return (
     <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
@@ -12,10 +16,26 @@ const Navbar = (props: Props) => {
           <img src={Logo} alt="logo" className="" />
           <div className={`${flexBetween}w-full`}>
             <div className={`${flexBetween}mt-4 gap-8 text-sm`}>
-              <a href="#">Home</a>
-              <a href="#">About</a>
-              <a href="#">Services</a>
-              <a href="#">Contact</a>
+              <Link
+                page="Home"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              ></Link>
+              <Link
+                page="Benefits"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              ></Link>
+              <Link
+                page="Our Classes"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              ></Link>
+              <Link
+                page="Contact"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              ></Link>
             </div>
           </div>
         </div>
