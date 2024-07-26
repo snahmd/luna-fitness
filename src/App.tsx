@@ -1,10 +1,11 @@
 import "./App.css";
+import Navbar from "./screen/Navbar";
 
 function App() {
   return (
     <>
       <div>
-        <h1 className="bg-red-500">Hello</h1>
+        <Navbar></Navbar>
       </div>
     </>
   );
